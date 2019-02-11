@@ -53,6 +53,50 @@
                 depth: 2
             },
             ga: 'UA-134256609-1',
+            plugins: [
+                function (hook, vm) {
+                    let footer = [
+                        '<hr/>',
+                        '<footer>',
+                        '<span><a href="https://github.com/sutaojie">sutaojie</a> &copy;2019.</span>',
+                        '<span>fake it until make it.</span>',
+                        // '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+                        '</footer>'
+                    ].join('')
+
+                    hook.init(function () {
+                        // 初始化时调用，只调用一次，没有参数。
+                    })
+
+                    hook.beforeEach(function (content) {
+                        // 每次开始解析 Markdown 内容时调用
+                        // ...
+                        return content
+                    })
+
+                    hook.afterEach(function (html, next) {
+                        // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
+                        // ...
+                        // 异步处理完成后调用 next(html) 返回结果
+                        html += footer
+                        next(html)
+
+                    })
+
+                    hook.doneEach(function () {
+                        // 每次路由切换时数据全部加载完成后调用，没有参数。
+                        // ...
+                    })
+
+                    hook.mounted(function () {
+                        // 初始化完成后调用 ，只调用一次，没有参数。
+                    })
+
+                    hook.ready(function () {
+                        // 初始化并第一次加完成数据后调用，没有参数。
+                    })
+                }
+            ]
         }
     </script>
     <script src="//unpkg.com/vue"></script>
