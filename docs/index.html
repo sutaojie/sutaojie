@@ -8,12 +8,13 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <link rel="stylesheet" href="//unpkg.com/vuep/dist/vuep.css">
 </head>
 
 <body>
     <nav>
+        <a href="#/">English</a>
         <a href="#/zh-cn/">中文</a>
-        <a href="#/en/">English</a>
     </nav>
     <div id="app"></div>
     <script>
@@ -24,11 +25,12 @@
                 '/*/_sidebar.md': '/_sidebar.md'
             },
             loadSidebar: true,
-            coverpage: ['/', '/zh-cn/', '/en/'],
+            coverpage: ['/', '/zh-cn/'],
             auto2top: true,
             mergeNavbar: true,
             notFoundPage: true,
-            routerMode: 'hash',
+            routerMode: 'history',
+            // routerMode: 'hash',
             homepage: 'home.md',
             name: 'su',
             repo: '',
@@ -37,12 +39,10 @@
                 paths: [],
                 placeholder: {
                     '/zh-cn/': '搜索',
-                    '/en/': 'Type to search',
                     '/': 'Type to search'
                 },
                 noData: {
                     '/zh-cn/': '找不到结果',
-                    '/en/': 'No Results!',
                     '/': 'No Results!'
                 },
                 depth: 2
@@ -50,6 +50,8 @@
             ga: 'UA-134256609-1',
         }
     </script>
+    <script src="//unpkg.com/vue"></script>
+    <script src="//unpkg.com/vuep"></script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>

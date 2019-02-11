@@ -1,2 +1,0 @@
-- [Index](zh-cn/README)
-- [Guide](zh-cn/guide)
