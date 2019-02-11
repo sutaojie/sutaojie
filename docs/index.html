@@ -18,6 +18,11 @@
     </nav>
     <div id="app"></div>
     <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+        }
+    </script>
+    <script>
         window.$docsify = {
             loadNavbar: true,
             subMaxLevel: 2,
